@@ -30,7 +30,7 @@ SUBSTRATES = ((1, 'Canvas'),
 			  (4, 'Paper'))
 
 
-class Gallery(models.Model):
+class Post(models.Model):
 	artist = models.CharField(max_length=20, default='Meredith Bakke', editable=False)
 	title = models.CharField(max_length=50)
 	year = models.IntegerField(validators=[MinValueValidator(2016), max_value_current_year])

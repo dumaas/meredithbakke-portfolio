@@ -1,9 +1,9 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .models import Gallery
+from .models import Post
 
 
-class GalleryTests(TestCase):
+class PostTest(TestCase):
 
 	@classmethod
 	def setUpTestData(cls):
@@ -12,18 +12,18 @@ class GalleryTests(TestCase):
 			username='testuser1', password='abc123')
 		testuser1.save()
 
-		# Create gallery post
-		test_post = Gallery.objects.create(
+		# Create post post
+		test_post = Post.objects.create(
 			title='Artwork title', year='2020',
 			size='32x64', image='test_image.jpg')
 		test_post.save()
 
-	def test_gallery_content(self):
-		gallery = Gallery.objects.get(id=1)
-		title = f'{gallery.title}'
-		year = f'{gallery.year}'
-		size = f'{gallery.size}'
-		image = f'{gallery.image}'
+	def test_post_content(self):
+		post = Post.objects.get(id=1)
+		title = f'{post.title}'
+		year = f'{post.year}'
+		size = f'{post.size}'
+		image = f'{post.image}'
 
 		self.assertEqual(title, 'Artwork title')
 		self.assertEqual(year, '2020')

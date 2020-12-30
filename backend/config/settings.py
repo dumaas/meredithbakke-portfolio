@@ -14,10 +14,9 @@ env = environ.Env(
 # reading .env file
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-# false if not in os.environ
 DEBUG = env('DEBUG')
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Use .env file
 SECRET_KEY = env('SECRET_KEY')
 
 ALLOWED_HOSTS = []
@@ -35,9 +34,10 @@ INSTALLED_APPS = [
 
     # 3rd Party
     'multiselectfield',
+    'rest_framework',
 
     # Local
-    'gallery.apps.GalleryConfig',
+    'posts.apps.PostsConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'portfolio_project.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'portfolio_project.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -123,3 +123,10 @@ STATIC_URL = '/static/'
 # Set location for images
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Django Rest Framework Config
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
