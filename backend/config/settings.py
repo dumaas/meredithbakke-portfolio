@@ -37,9 +37,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'drf_yasg',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
     'multiselectfield',
-    'rest_auth',
-    'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
 

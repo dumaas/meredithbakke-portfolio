@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 django-rest-auth = "*"
 django-allauth = "*"
+coreapi = "*"
+pyyaml = "*"
+drf-yasg = "*"
+dj-rest-auth = "*"
 
 [dev-packages]
 
