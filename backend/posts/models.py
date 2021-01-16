@@ -1,9 +1,14 @@
+import uuid
 from django.db import models
-from django.contrib.auth.models import User
+from django.urls import reverse
 
 
 class Post(models.Model):
-  author = models.ForeignKey(User, on_delete=models.CASCADE)
+  id = models.UUIDField(
+      primary_key=True,
+      default=uuid.uuid4,
+      editable=False)
+  author = models.CharField(max_length=200, default="Meredith Bakke")
   title = models.CharField(max_length=50)
   year = models.IntegerField()
   medium = models.CharField(max_length=50)
@@ -13,3 +18,6 @@ class Post(models.Model):
 
   def __str__(self):
     return self.title
+
+  def get_absolute_url(self):
+    return reverse('post_detail', args=[str(self.id)])

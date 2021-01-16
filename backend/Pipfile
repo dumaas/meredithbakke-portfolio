@@ -7,6 +7,14 @@ name = "pypi"
 django = "*"
 psycopg2-binary = "*"
 pillow = "*"
+djangorestframework = "*"
+coreapi = "*"
+pyyaml = "*"
+drf-yasg = "*"
+dj-rest-auth = "*"
+django-allauth = "*"
+django-cors-headers = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
