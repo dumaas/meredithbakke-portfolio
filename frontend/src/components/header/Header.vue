@@ -3,7 +3,7 @@
     <div class="logo">
       <router-link to="/">Home</router-link>
     </div>
-    <nav>
+    <nav class="logo">
       <ul>
         <li v-if="!auth">
           <router-link to="/login">Log In</router-link>
