@@ -12,24 +12,31 @@
         </div>
         <div class="input">
           <label for="year">Year</label>
-          <input
-            type="text"
-            id="year"
-            v-model="year">
+          <select id="year" v-model="year">
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+          </select>
         </div>
         <div class="input">
           <label for="medium">Medium</label>
-          <input
-            type="text"
-            id="medium"
-            v-model="medium">
+          <select id="medium" v-model="medium">
+            <option value="Oil">Oil</option>
+            <option value="Acrylic">Acrylic</option>
+            <option value="Watercolor">Watercolor</option>
+            <option value="Pastel">Pastel</option>
+            <option value="Colored Pencil">Colored Pencil</option>
+            <option value="Graphite">Graphite</option>
+          </select>
         </div>
         <div class="input">
           <label for="substrate">Substrate</label>
-          <input
-            type="text"
-            id="substrate"
-            v-model="substrate">
+          <select id="substrate" v-model="substrate">
+            <option value="Panel">Panel</option>
+            <option value="Canvas">Canvas</option>
+            <option value="Linen">Linen</option>
+            <option value="Paper">Paper</option>
+          </select>
         </div>
         <div class="input">
           <label for="size">Size</label>
@@ -44,11 +51,29 @@
             type="file"
             id="image">
         </div>
+        <div class="submit object-center">
+          <button type="submit">Submit</button>
+        </div>
 
       </form>
     </div>
   </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        title: '',
+        year: null,
+        medium: '',
+        substrate: '',
+        size: '',
+        image: null,
+      }
+    },
+  }
+</script>
 
 <style scoped>
   .addPost-form {
