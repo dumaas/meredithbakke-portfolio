@@ -72,6 +72,20 @@
         image: null,
       }
     },
+    methods: {
+      onSubmit() {
+        const formData = {
+          title: this.title,
+          year: this.year,
+          medium: this.medium,
+          substrate: this.substrate,
+          size: this.size,
+          image: this.image,
+        }
+        console.log(formData)
+        // this.$store.dispatch('createPost', formData)
+      },
+    },
   }
 </script>
 
